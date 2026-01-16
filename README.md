@@ -1,8 +1,8 @@
 # Lab 2: Automated Training and Metric Reporting Using GitHub Actions
 
 ## Student Details
-- **Name:** Priyanka Kumari  
-- **Roll Number:** 2022BCD0057  
+- **Name:** Urvashi Salonia
+- **Roll Number:** 2022BCS0222  
 
 ---
 
@@ -110,4 +110,3 @@ Hyperparameters must still be changed manually, and result comparison is limited
 ---
 
 ## Repository Link
-https://github.com/2022BCD0057-priyanka/lab2

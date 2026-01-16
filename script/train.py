@@ -5,50 +5,36 @@ import joblib
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-# from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Lasso
+from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 
-# Create output directory
 os.makedirs("output", exist_ok=True)
 
-# Load dataset
 data = pd.read_csv("dataset/winequality-red.csv", sep=";")
 
 X = data.drop("quality", axis=1)
 y = data["quality"]
 
-# Preprocessing
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Train-test split
 X_train, X_test, y_train, y_test = train_test_split(
     X_scaled, y, test_size=0.3, random_state=42
 )
 
-# Train model
-# model = LinearRegression()
-
-model = Lasso(alpha=0.5)
-
+model = Ridge(alpha=1.0)
 model.fit(X_train, y_train)
 
-# Predict
 y_pred = model.predict(X_test)
 
-# Metrics
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
-# Print metrics
 print(f"MSE: {mse}")
 print(f"R2 Score: {r2}")
 
-# Save model
 joblib.dump(model, "output/model.pkl")
 
-# Save metrics
 metrics = {
     "MSE": mse,
     "R2_Score": r2

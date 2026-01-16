@@ -31,8 +31,8 @@ jobs:
     - name: Job Summary
       run: |
         echo "## Lab 2 – Automated Training Results" >> $GITHUB_STEP_SUMMARY
-        echo "**Name:** Priyanka Kumari" >> $GITHUB_STEP_SUMMARY
-        echo "**Roll No:** 2022BCD0057" >> $GITHUB_STEP_SUMMARY
+        echo "**Name:** Urvashi" >> $GITHUB_STEP_SUMMARY
+        echo "**Roll No:** 2022BCS0222" >> $GITHUB_STEP_SUMMARY
         echo "**Python Version:** ${{ matrix.python-version }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Metrics" >> $GITHUB_STEP_SUMMARY
